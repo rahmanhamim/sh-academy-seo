@@ -22,7 +22,7 @@ export async function GET(request: Request) {
             alignItems: "center",
             justifyContent: "center",
             background: "linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)",
-            padding: "80px",
+            padding: "60px",
           }}
         >
           <div
@@ -30,11 +30,10 @@ export async function GET(request: Request) {
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
-              borderRadius: "24px",
-              padding: "80px",
+              borderRadius: "16px",
+              padding: "70px",
               width: "100%",
               maxWidth: "1000px",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
               alignItems: "center",
               textAlign: "center",
             }}
@@ -44,12 +43,12 @@ export async function GET(request: Request) {
               style={{
                 display: "flex",
                 background: "linear-gradient(135deg, #14b8a6 0%, #10b981 100%)",
-                padding: "16px 32px",
-                borderRadius: "100px",
-                marginBottom: "32px",
-                fontSize: 20,
+                padding: "14px 28px",
+                borderRadius: "50px",
+                fontSize: 18,
                 fontWeight: "bold",
                 color: "white",
+                marginBottom: "28px",
               }}
             >
               StartHub Academy
@@ -58,10 +57,10 @@ export async function GET(request: Request) {
             {/* Title */}
             <div
               style={{
-                fontSize: 64,
+                fontSize: 58,
                 fontWeight: "bold",
                 color: "#1a1a1a",
-                lineHeight: 1.1,
+                lineHeight: 1.2,
                 marginBottom: "24px",
                 display: "flex",
               }}
@@ -72,53 +71,40 @@ export async function GET(request: Request) {
             {/* Description */}
             <div
               style={{
-                fontSize: 28,
+                fontSize: 26,
                 color: "#666",
                 lineHeight: 1.4,
-                marginBottom: "40px",
+                marginBottom: "36px",
                 display: "flex",
                 maxWidth: "800px",
               }}
             >
-              Expert-led courses for founders and entrepreneurs. Learn from
-              those who&apos;ve raised millions.
+              Expert-led courses for founders and entrepreneurs
             </div>
 
             {/* Stats */}
             <div
               style={{
                 display: "flex",
-                gap: "48px",
-                fontSize: 22,
+                gap: "40px",
+                fontSize: 20,
                 color: "#333",
+                fontWeight: "600",
               }}
             >
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "12px" }}
-              >
-                <span style={{ fontSize: 32 }}>📚</span>
-                <span style={{ fontWeight: "600" }}>
-                  {courses.length} Courses
-                </span>
-              </div>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "12px" }}
-              >
-                <span style={{ fontSize: 32 }}>⭐</span>
-                <span style={{ fontWeight: "600" }}>4.8 Rating</span>
-              </div>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "12px" }}
-              >
-                <span style={{ fontSize: 32 }}>👥</span>
-                <span style={{ fontWeight: "600" }}>Expert Instructors</span>
-              </div>
+              <div style={{ display: "flex" }}>{courses.length} Courses</div>
+              <div style={{ display: "flex" }}>Rating: 4.8</div>
+              <div style={{ display: "flex" }}>Expert Instructors</div>
             </div>
           </div>
         </div>,
         {
           width: 1200,
           height: 630,
+          headers: {
+            "Cache-Control":
+              "public, max-age=604800, s-maxage=604800, stale-while-revalidate=86400",
+          },
         },
       );
     }
@@ -139,9 +125,8 @@ export async function GET(request: Request) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#fff",
           background: "linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)",
-          padding: "40px 80px",
+          padding: "50px 70px",
         }}
       >
         {/* Content Container */}
@@ -150,21 +135,20 @@ export async function GET(request: Request) {
             display: "flex",
             flexDirection: "column",
             backgroundColor: "white",
-            borderRadius: "20px",
-            padding: "60px",
+            borderRadius: "16px",
+            padding: "55px",
             width: "100%",
             maxWidth: "1000px",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
           }}
         >
           {/* Title */}
           <div
             style={{
-              fontSize: 60,
+              fontSize: 54,
               fontWeight: "bold",
               color: "#1a1a1a",
               lineHeight: 1.2,
-              marginBottom: "20px",
+              marginBottom: "22px",
               display: "flex",
             }}
           >
@@ -177,46 +161,28 @@ export async function GET(request: Request) {
               fontSize: 24,
               color: "#666",
               lineHeight: 1.4,
-              marginBottom: "30px",
+              marginBottom: "32px",
               display: "flex",
             }}
           >
-            {course.description.slice(0, 150)}
-            {course.description.length > 150 ? "..." : ""}
+            {course.description.slice(0, 130)}
+            {course.description.length > 130 ? "..." : ""}
           </div>
 
           {/* Meta Info */}
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: "30px",
-              fontSize: 22,
+              gap: "32px",
+              fontSize: 21,
               color: "#333",
+              marginBottom: "32px",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <span>⭐</span>
-              <span>
-                {course.rating} ({course.totalReviews} reviews)
-              </span>
+            <div style={{ display: "flex" }}>
+              Rating: {course.rating} ({course.totalReviews} reviews)
             </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <span>⏱️</span>
-              <span>{course.duration}</span>
-            </div>
+            <div style={{ display: "flex" }}>{course.duration}</div>
           </div>
 
           {/* Footer */}
@@ -225,14 +191,13 @@ export async function GET(request: Request) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginTop: "40px",
-              paddingTop: "30px",
-              borderTop: "2px solid #eee",
+              paddingTop: "28px",
+              borderTop: "2px solid #e5e5e5",
             }}
           >
             <div
               style={{
-                fontSize: 28,
+                fontSize: 24,
                 fontWeight: "bold",
                 color: "#14b8a6",
                 display: "flex",
@@ -242,7 +207,7 @@ export async function GET(request: Request) {
             </div>
             <div
               style={{
-                fontSize: 36,
+                fontSize: 32,
                 fontWeight: "bold",
                 color: "#1a1a1a",
                 display: "flex",
@@ -256,6 +221,10 @@ export async function GET(request: Request) {
       {
         width: 1200,
         height: 630,
+        headers: {
+          "Cache-Control":
+            "public, max-age=604800, s-maxage=604800, stale-while-revalidate=86400",
+        },
       },
     );
   } catch (error) {
