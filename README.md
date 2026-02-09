@@ -38,6 +38,4 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
 
-See [PROJECT_ASSESSMENT.md](./PROJECT_ASSESSMENT.md) for detailed analysis.
-
 _Built for StartHub Academy | February 2026_
