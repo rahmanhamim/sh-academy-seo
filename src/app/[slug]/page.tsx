@@ -49,7 +49,7 @@ export async function generateMetadata({
     process.env.NEXT_PUBLIC_BASE_URL ||
     (process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://starthub.academy");
+      : "https://sh-academy-seo.vercel.app");
 
   const ogUrl = `${baseUrl}/api/og?courseSlug=${slug}`;
 
@@ -111,7 +111,7 @@ export default async function CourseDetailPage({
     process.env.NEXT_PUBLIC_BASE_URL ||
     (process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://starthub.academy");
+      : "https://sh-academy-seo.vercel.app");
 
   // JSON-LD Structured Data for Course
   const jsonLd = {

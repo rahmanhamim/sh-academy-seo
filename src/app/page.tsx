@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     title: "StartHub Academy | SEO-Optimized Courses for Entrepreneurs",
     description:
       "Explore expert-led courses on entrepreneurship, startup fundamentals, venture capital, and technical skills.",
-    url: "https://starthub-academy.vercel.app",
+    url: "https://sh-academy-seo.vercel.app",
     siteName: "StartHub Academy",
     images: [
       {
-        url: "/api/og",
+        url: "https://sh-academy-seo.vercel.app/api/og",
         width: 1200,
         height: 630,
         alt: "StartHub Academy - Master Your Startup Journey",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "StartHub Academy | SEO-Optimized Courses for Entrepreneurs",
     description:
       "Explore expert-led courses on entrepreneurship, startup fundamentals, venture capital, and technical skills.",
-    images: ["/api/og"],
+    images: ["https://sh-academy-seo.vercel.app/api/og"],
   },
 };
 
